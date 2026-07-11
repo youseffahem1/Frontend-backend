@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 import "./globals.css";
 
-// ============================================================
-// 1. Floating Particles
-// ============================================================
+
+
+
 const FloatingParticles = () => {
   const particles = Array.from({ length: 30 }).map((_, i) => ({
     id: i,
@@ -65,9 +65,9 @@ const FloatingParticles = () => {
   );
 };
 
-// ============================================================
-// 2. Dynamic Island Notification
-// ============================================================
+
+
+
 const DynamicIsland = ({ notification, onClose }) => {
   useEffect(() => {
     if (notification.show && notification.type !== "loading") {
@@ -123,9 +123,9 @@ const DynamicIsland = ({ notification, onClose }) => {
   );
 };
 
-// ============================================================
-// 3. Ripple Effect
-// ============================================================
+
+
+
 const useRipple = () => {
   const createRipple = (e) => {
     const button = e.currentTarget;
@@ -144,9 +144,9 @@ const useRipple = () => {
   return createRipple;
 };
 
-// ============================================================
-// 4. Main Page
-// ============================================================
+
+
+
 export default function LuxuryLoginPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
@@ -170,7 +170,7 @@ export default function LuxuryLoginPage() {
     message: "",
   });
 
-  // --- Audio Setup ---
+
   useEffect(() => {
     audioRef.current = new Audio("/Ost.mp3");
     audioRef.current.loop = false;
@@ -182,7 +182,7 @@ export default function LuxuryLoginPage() {
     };
   }, []);
 
-  // --- Welcome Notification ---
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setNotification({
@@ -195,7 +195,7 @@ export default function LuxuryLoginPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  // --- Play Music ---
+
   const playMusic = () => {
     if (audioRef.current) {
       audioRef.current
@@ -204,7 +204,7 @@ export default function LuxuryLoginPage() {
     }
   };
 
-  // --- Toggle Auth Mode ---
+
   const toggleAuthMode = () => {
     if (isMorphing) return;
     setIsMorphing(true);
@@ -212,7 +212,7 @@ export default function LuxuryLoginPage() {
     setTimeout(() => setIsMorphing(false), 500);
   };
 
-  // --- Handle Login ---
+
   const handleLogin = (e) => {
     e.preventDefault();
     if (!email.trim() || !password.trim()) {
@@ -262,7 +262,7 @@ export default function LuxuryLoginPage() {
     }, 2500);
   };
 
-  // --- Handle Register ---
+
   const handleRegister = (e) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !password.trim()) {
@@ -303,7 +303,7 @@ export default function LuxuryLoginPage() {
     }, 2500);
   };
 
-  // --- Animation Variants ---
+
   const inputVariants = {
     hidden: { opacity: 0, y: 15, filter: "blur(4px)" },
     visible: (i) => ({
@@ -325,7 +325,7 @@ export default function LuxuryLoginPage() {
     register: { rotate: 8, scale: 1.05 },
   };
 
-  // --- Main Content ---
+
   const quote = "Every beautiful moment deserves a beautiful place.";
   const quoteLetters = quote.split("");
   const subText =
@@ -333,7 +333,7 @@ export default function LuxuryLoginPage() {
 
   return (
     <>
-      {/* Background */}
+      {}
       <div className="cinematic-bg">
         <div className="glow-orb orb-primary"></div>
         <div className="glow-orb orb-secondary"></div>
@@ -342,15 +342,15 @@ export default function LuxuryLoginPage() {
       <div className="noise-overlay"></div>
       <FloatingParticles />
 
-      {/* Notification */}
+      {}
       <DynamicIsland
         notification={notification}
         onClose={() => setNotification((prev) => ({ ...prev, show: false }))}
       />
 
-      {/* Main Layout */}
+      {}
       <div className="login-container">
-        {/* Left Panel */}
+        {}
         <div className="left-panel">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -409,10 +409,10 @@ export default function LuxuryLoginPage() {
           </motion.div>
         </div>
 
-        {/* Right Panel - Card */}
+        {}
         <div className="right-panel">
           <div className="glass-card">
-            {/* Icon - Morphing */}
+            {}
             <motion.div
               className="icon-wrapper"
               variants={iconVariants}
@@ -431,7 +431,7 @@ export default function LuxuryLoginPage() {
               )}
             </motion.div>
 
-            {/* Title - Morphing */}
+            {}
             <AnimatePresence mode="wait">
               <motion.h2
                 key={isLogin ? "login-title" : "register-title"}
@@ -445,7 +445,6 @@ export default function LuxuryLoginPage() {
               </motion.h2>
             </AnimatePresence>
 
-            {/* Subtitle */}
             <AnimatePresence mode="wait">
               <motion.p
                 key={isLogin ? "login-subtitle" : "register-subtitle"}
@@ -459,7 +458,6 @@ export default function LuxuryLoginPage() {
               </motion.p>
             </AnimatePresence>
 
-            {/* ===== Login Form ===== */}
             <AnimatePresence mode="popLayout">
               {isLogin ? (
                 <motion.form
@@ -470,7 +468,6 @@ export default function LuxuryLoginPage() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Email */}
                   <motion.div
                     custom={0}
                     variants={inputVariants}
@@ -496,7 +493,6 @@ export default function LuxuryLoginPage() {
                     <Mail className="input-icon" size={18} />
                   </motion.div>
 
-                  {/* Password */}
                   <motion.div
                     custom={1}
                     variants={inputVariants}
@@ -529,7 +525,6 @@ export default function LuxuryLoginPage() {
                     </button>
                   </motion.div>
 
-                  {/* Error Message */}
                   {errorMessage && (
                     <motion.p
                       className="text-error"
@@ -540,7 +535,6 @@ export default function LuxuryLoginPage() {
                     </motion.p>
                   )}
 
-                  {/* Options */}
                   <motion.div
                     custom={2}
                     variants={inputVariants}
@@ -562,7 +556,6 @@ export default function LuxuryLoginPage() {
                     </button>
                   </motion.div>
 
-                  {/* Submit Button */}
                   <motion.div
                     custom={3}
                     variants={inputVariants}
@@ -593,7 +586,6 @@ export default function LuxuryLoginPage() {
                   </motion.div>
                 </motion.form>
               ) : (
-                /* ===== Register Form ===== */
                 <motion.form
                   key="register-form"
                   onSubmit={handleRegister}
@@ -602,7 +594,6 @@ export default function LuxuryLoginPage() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Name */}
                   <motion.div
                     custom={0}
                     variants={inputVariants}
@@ -628,7 +619,6 @@ export default function LuxuryLoginPage() {
                     <User className="input-icon" size={18} />
                   </motion.div>
 
-                  {/* Email */}
                   <motion.div
                     custom={1}
                     variants={inputVariants}
@@ -654,7 +644,6 @@ export default function LuxuryLoginPage() {
                     <Mail className="input-icon" size={18} />
                   </motion.div>
 
-                  {/* Password */}
                   <motion.div
                     custom={2}
                     variants={inputVariants}
@@ -687,7 +676,6 @@ export default function LuxuryLoginPage() {
                     </button>
                   </motion.div>
 
-                  {/* Error Message */}
                   {errorMessage && (
                     <motion.p
                       className="text-error"
@@ -698,7 +686,6 @@ export default function LuxuryLoginPage() {
                     </motion.p>
                   )}
 
-                  {/* Submit Button */}
                   <motion.div
                     custom={3}
                     variants={inputVariants}
@@ -731,10 +718,8 @@ export default function LuxuryLoginPage() {
               )}
             </AnimatePresence>
 
-            {/* ===== Divider ===== */}
             <div className="divider">Or continue with</div>
 
-            {/* ===== Social Buttons ===== */}
             <div className="social-row">
               <button type="button" className="btn-social">
                 <svg width="16" height="16" viewBox="0 0 48 48">
@@ -766,7 +751,6 @@ export default function LuxuryLoginPage() {
               </button>
             </div>
 
-            {/* ===== Switch Link ===== */}
             <div className="signup-link">
               {isLogin ? (
                 <>
@@ -798,7 +782,6 @@ export default function LuxuryLoginPage() {
         </div>
       </div>
 
-      {/* Ripple style injection */}
     </>
   );
 }

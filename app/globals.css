@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
 
-/* ============================================================
-   🎨 الألوان
-   ============================================================ */
+
 :root {
   --bg-primary: #09090f;
   --bg-secondary: #111827;
@@ -155,7 +153,7 @@ html, body {
 }
 
 .glass-card {
-background: rgba(255, 255, 255, 0.03); /* شفافية عالية جداً */
+background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(60px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -331,9 +329,7 @@ background: rgba(255, 255, 255, 0.03); /* شفافية عالية جداً */
   color: #786BFA;
 }
 
-/* ============================================================
-   🔘 الزر الرئيسي - مع محاذاة مركزية صحيحة
-   ============================================================ */
+
 .btn-primary {
   width: 100%;
   position: relative;
@@ -382,10 +378,10 @@ background: rgba(255, 255, 255, 0.03); /* شفافية عالية جداً */
 display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* المسافة بين النص والأيقونة */
+  gap: 8px;
   width: 100%;
   position: relative;
-  z-index: 2; /* لضمان بقاء النص فوق تأثير الـ ripple */
+  z-index: 2;
   pointer-events: none;
 }
 .btn-content svg {
@@ -579,7 +575,7 @@ display: flex;
   50% { height: 20px; transform: scaleY(1); }
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
   .login-container { padding: 20px 30px; gap: 30px; }
   .hero-text { font-size: 40px; }
@@ -608,7 +604,7 @@ display: flex;
   .dynamic-island { min-width: unset; width: 95vw; padding: 8px 12px; }
   .audio-waves { display: none; }
 }
-/* أضف هذا الكود في نهاية ملف globals.css */
+
 .ripple {
   position: absolute;
   border-radius: 50%;
