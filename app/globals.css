@@ -5,7 +5,7 @@
   --glass-hover: rgba(255, 255, 255, 0.06);
   --text-main: #ffffff;
   --text-muted: #a1a1aa;
-  --accent: #007aff; /* Apple Blue */
+  --accent: #007aff;
   --accent-glow: rgba(0, 122, 255, 0.4);
   --danger: #ff453a;
   --success: #32d74b;
@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Ambient Animated Glow (Linear/Vercel style behind glass) */
 .ambient-glow {
   position: fixed;
   top: 50%;
@@ -46,7 +45,7 @@ body {
   100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
 }
 
-/* Glassmorphism Utilities */
+
 .glass-panel {
   background: var(--glass-bg);
   backdrop-filter: blur(24px);
@@ -61,7 +60,7 @@ body {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Auth Page */
+
 .auth-container {
   display: flex;
   align-items: center;
@@ -84,7 +83,7 @@ body {
   letter-spacing: -0.5px;
 }
 
-/* Inputs & Buttons */
+
 .input-group {
   display: flex;
   flex-direction: column;
@@ -135,13 +134,13 @@ body {
   opacity: 0.9;
 }
 
-/* Layout */
+
 .dashboard-layout {
   display: flex;
   height: 100vh;
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 260px;
   height: 100vh;
@@ -183,7 +182,7 @@ body {
   color: var(--danger);
 }
 
-/* Main Content */
+
 .main-content {
   flex: 1;
   display: flex;
@@ -191,7 +190,7 @@ body {
   overflow-y: auto;
 }
 
-/* Top Navbar */
+
 .top-navbar {
   height: 70px;
   padding: 0 40px;
@@ -223,7 +222,7 @@ body {
   background: linear-gradient(135deg, var(--accent), #aa00ff);
 }
 
-/* Page Content */
+
 .page-container {
   padding: 40px;
   animation: fadeIn 0.4s ease;
@@ -262,7 +261,7 @@ body {
   background: #0066d6;
 }
 
-/* Data Grids */
+
 .data-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -298,7 +297,7 @@ body {
 .status-badge.pending { background: rgba(255, 153, 0, 0.2); color: #ff9900; }
 .status-badge.completed { background: rgba(50, 215, 75, 0.2); color: var(--success); }
 
-/* Modal */
+
 .modal-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -340,7 +339,6 @@ body {
 
 .btn-secondary:hover { background: var(--glass-hover); }
 
-/* Notifications Toast (Apple Style) */
 .toast-container {
   position: fixed;
   bottom: 40px;

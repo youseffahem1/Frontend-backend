@@ -178,7 +178,6 @@ function LoginView({ onLogin, showToast }) {
   );
 }
 
-// ================= LAYOUT COMPONENTS =================
 function Sidebar({ currentView, setView, onLogout }) {
   const menu = [
     { id: "dashboard", label: "Dashboard" },
@@ -257,9 +256,7 @@ function DashboardOverview() {
   );
 }
 
-// ================= CRUD VIEWS =================
 
-// --- STUDENTS ---
 function StudentsView({ token, showToast }) {
   const [students, setStudents] = useState([]);
   const [showModal, setShowModal] = useState(false);
