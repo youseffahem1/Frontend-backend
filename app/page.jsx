@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:8000";
+const API_URL = "https://frontend-backend-xcka.onrender.com";
 
 export default function App() {
   const [token, setToken] = useState(null);
